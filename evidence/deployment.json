@@ -1,0 +1,20 @@
+{
+  "network": "Pharos Atlantic Testnet",
+  "chainId": 688689,
+  "rpcUrl": "https://atlantic.dplabs-internal.com",
+  "deployedAt": "2026-11-11T04:58:11.559Z",
+  "deployer": "0x299Ce4113abF88F4997737184aa8A7a3D58AC15C",
+  "suiteAddress": "0x3fab010db4fe733691bc4109522de1d15201999e",
+  "contracts": {
+    "PharosVaultSuite": "0x3fab010db4fe733691bc4109522de1d15201999e",
+    "HarborLendVault": "0xe936c602C6E937B24BB98ac0cC79A508E9A253bA",
+    "AtlanticPrimeStaking": "0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c",
+    "PharosRwaTreasury": "0xE343f0B44C609F089D17D3D7fbd516723dC3Dbca",
+    "AggregatorRouteAnchor": "0x79168509e844127aBF90eA3B9da16E577e7f8097",
+    "SuiteToken_tUSDC": "0xd00666d9d7a8FF7D89f496c93bE8737174b49a79"
+  },
+  "deployTx": "0xf2bd93fb2602f1270c1ff5985b77cc01cf329ad1023e0b73760c432325d585b1",
+  "deployTxUrl": "https://atlantic.pharosscan.xyz/tx/0xf2bd93fb2602f1270c1ff5985b77cc01cf329ad1023e0b73760c432325d585b1",
+  "blockNumber": 32609752,
+  "gasUsed": "6493524"
+}

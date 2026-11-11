@@ -1,0 +1,946 @@
+{
+  "generatedAt": "2026-11-11T04:58:21.814Z",
+  "network": "Pharos Atlantic Testnet",
+  "chainId": 688689,
+  "rpcUrl": "https://atlantic.dplabs-internal.com",
+  "explorer": "https://atlantic.pharosscan.xyz",
+  "user": "0x299Ce4113abF88F4997737184aa8A7a3D58AC15C",
+  "userUrl": "https://atlantic.pharosscan.xyz/address/0x299Ce4113abF88F4997737184aa8A7a3D58AC15C",
+  "contracts": {
+    "suiteAddress": "0x3fab010db4fe733691bc4109522de1d15201999e",
+    "harborLend": "0xe936c602C6E937B24BB98ac0cC79A508E9A253bA",
+    "primeStaking": "0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c",
+    "rwaTreasury": "0xE343f0B44C609F089D17D3D7fbd516723dC3Dbca",
+    "routeAnchor": "0x79168509e844127aBF90eA3B9da16E577e7f8097",
+    "tusdc": "0xd00666d9d7a8FF7D89f496c93bE8737174b49a79"
+  },
+  "deployment": {
+    "network": "Pharos Atlantic Testnet",
+    "chainId": 688689,
+    "rpcUrl": "https://atlantic.dplabs-internal.com",
+    "deployedAt": "2026-11-11T04:58:11.559Z",
+    "deployer": "0x299Ce4113abF88F4997737184aa8A7a3D58AC15C",
+    "suiteAddress": "0x3fab010db4fe733691bc4109522de1d15201999e",
+    "contracts": {
+      "PharosVaultSuite": "0x3fab010db4fe733691bc4109522de1d15201999e",
+      "HarborLendVault": "0xe936c602C6E937B24BB98ac0cC79A508E9A253bA",
+      "AtlanticPrimeStaking": "0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c",
+      "PharosRwaTreasury": "0xE343f0B44C609F089D17D3D7fbd516723dC3Dbca",
+      "AggregatorRouteAnchor": "0x79168509e844127aBF90eA3B9da16E577e7f8097",
+      "SuiteToken_tUSDC": "0xd00666d9d7a8FF7D89f496c93bE8737174b49a79"
+    },
+    "deployTx": "0xf2bd93fb2602f1270c1ff5985b77cc01cf329ad1023e0b73760c432325d585b1",
+    "deployTxUrl": "https://atlantic.pharosscan.xyz/tx/0xf2bd93fb2602f1270c1ff5985b77cc01cf329ad1023e0b73760c432325d585b1",
+    "blockNumber": 32609752,
+    "gasUsed": "6493524"
+  },
+  "scenarios": {
+    "unifiedQuery": {
+      "input": "Show my positions and current APY across all vaults",
+      "venueSnapshots": [
+        {
+          "protocolId": "HARBOR_LEND",
+          "label": "HarborLendVault",
+          "vault": "0xe936c602C6E937B24BB98ac0cC79A508E9A253bA",
+          "spotApyBps": 764,
+          "entryFeeBps": 0,
+          "exitFeeBps": 5,
+          "totalTvl": "82000000000",
+          "availableLiquidity": "45000000000",
+          "utilizationWad": "451219512195121951",
+          "paused": false,
+          "blockNumber": 32609763
+        },
+        {
+          "protocolId": "ATLANTIC_PRIME",
+          "label": "AtlanticPrimeStaking",
+          "vault": "0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c",
+          "spotApyBps": 930,
+          "entryFeeBps": 10,
+          "exitFeeBps": 0,
+          "totalTvl": "10000000000",
+          "availableLiquidity": "10000000000",
+          "utilizationWad": "166666666666666666",
+          "paused": false,
+          "blockNumber": 32609763
+        },
+        {
+          "protocolId": "PHAROS_RWA",
+          "label": "PharosRwaTreasury",
+          "vault": "0xE343f0B44C609F089D17D3D7fbd516723dC3Dbca",
+          "spotApyBps": 780,
+          "entryFeeBps": 0,
+          "exitFeeBps": 0,
+          "totalTvl": "220000000000",
+          "availableLiquidity": "220000000000",
+          "utilizationWad": "0",
+          "paused": false,
+          "blockNumber": 32609773
+        }
+      ],
+      "positions": [],
+      "totals": {
+        "underlyingValue": "0",
+        "accruedYield": "0",
+        "weightedNetApyBps": 0
+      },
+      "venueHealth": [
+        {
+          "protocolId": "HARBOR_LEND",
+          "label": "HarborLendVault",
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": false,
+          "reason": "",
+          "latencyMs": 3834
+        },
+        {
+          "protocolId": "ATLANTIC_PRIME",
+          "label": "AtlanticPrimeStaking",
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": false,
+          "reason": "",
+          "latencyMs": 12164
+        },
+        {
+          "protocolId": "PHAROS_RWA",
+          "label": "PharosRwaTreasury",
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": false,
+          "reason": "",
+          "latencyMs": 11620
+        }
+      ],
+      "degradedMode": false
+    },
+    "optimalDeposit": {
+      "input": "Deposit 500 USDC into the best yield vault",
+      "parsedIntent": {
+        "kind": "deposit",
+        "raw": "Deposit 500 USDC into the best yield vault",
+        "amount": 500,
+        "horizonDays": 30,
+        "target": "best",
+        "confidence": 0.95,
+        "matched": [
+          "500 USDC",
+          "best"
+        ]
+      },
+      "intent": {
+        "kind": "deposit",
+        "raw": "Deposit 500 USDC into the best yield vault",
+        "amount": 500,
+        "horizonDays": 30,
+        "target": "best",
+        "confidence": 0.95,
+        "matched": [
+          "500 USDC",
+          "best"
+        ]
+      },
+      "summary": "Selected AtlanticPrimeStaking (Net 30d return: +3.29 USDC, 8.02% effective net APY; post-deposit rate 9.29% after utilization modeling). Rejected PharosRwaTreasury (+3.19 USDC net (7.75% effective) - lower base rate 7.80%; trails winner by 0.11 USDC worse). Rejected HarborLendVault (+3.10 USDC net (7.55% effective) - post-deposit APY compresses from 7.64% to 7.60% (utilization/dilution model); trails winner by 0.19 USDC worse).",
+      "comparisonTable": [
+        {
+          "protocolId": "ATLANTIC_PRIME",
+          "label": "AtlanticPrimeStaking",
+          "vaultAddress": "0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c",
+          "headlineApyBps": 930,
+          "postDepositApyBps": 929,
+          "entryFeeBps": 10,
+          "exitFeeBps": 0,
+          "entryFeeCost": "500000",
+          "grossYield": "3813990",
+          "gasCostUsdc": 0.02,
+          "netExpectedYield": "3293990",
+          "effectiveNetApyBps": 801.537566,
+          "utilizationBeforeWad": "166666666666666666",
+          "utilizationAfterWad": "166666666666666666",
+          "healthy": true,
+          "selected": true,
+          "rejectionReasons": []
+        },
+        {
+          "protocolId": "HARBOR_LEND",
+          "label": "HarborLendVault",
+          "vaultAddress": "0xe936c602C6E937B24BB98ac0cC79A508E9A253bA",
+          "headlineApyBps": 764,
+          "postDepositApyBps": 760,
+          "entryFeeBps": 0,
+          "exitFeeBps": 5,
+          "entryFeeCost": "0",
+          "grossYield": "3123287",
+          "gasCostUsdc": 0.02,
+          "netExpectedYield": "3103287",
+          "effectiveNetApyBps": 755.13317,
+          "utilizationBeforeWad": "451219512195121951",
+          "utilizationAfterWad": "451219512195121951",
+          "healthy": true,
+          "selected": false,
+          "rejectionReasons": []
+        },
+        {
+          "protocolId": "PHAROS_RWA",
+          "label": "PharosRwaTreasury",
+          "vaultAddress": "0xE343f0B44C609F089D17D3D7fbd516723dC3Dbca",
+          "headlineApyBps": 780,
+          "postDepositApyBps": 780,
+          "entryFeeBps": 0,
+          "exitFeeBps": 0,
+          "entryFeeCost": "0",
+          "grossYield": "3205479",
+          "gasCostUsdc": 0.02,
+          "netExpectedYield": "3185479",
+          "effectiveNetApyBps": 775.133223,
+          "utilizationBeforeWad": "0",
+          "utilizationAfterWad": "0",
+          "healthy": true,
+          "selected": false,
+          "rejectionReasons": []
+        }
+      ],
+      "runnerUps": [
+        {
+          "protocolId": "PHAROS_RWA",
+          "label": "PharosRwaTreasury",
+          "netExpectedYield": 3.185479,
+          "reason": "+3.19 USDC net (7.75% effective) - lower base rate 7.80%; trails winner by 0.11 USDC worse"
+        },
+        {
+          "protocolId": "HARBOR_LEND",
+          "label": "HarborLendVault",
+          "netExpectedYield": 3.103287,
+          "reason": "+3.10 USDC net (7.55% effective) - post-deposit APY compresses from 7.64% to 7.60% (utilization/dilution model); trails winner by 0.19 USDC worse"
+        }
+      ],
+      "degradedMode": false,
+      "venueHealth": [
+        {
+          "protocolId": "HARBOR_LEND",
+          "label": "HarborLendVault",
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": false,
+          "reason": "",
+          "latencyMs": 5392
+        },
+        {
+          "protocolId": "ATLANTIC_PRIME",
+          "label": "AtlanticPrimeStaking",
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": false,
+          "reason": "",
+          "latencyMs": 14839
+        },
+        {
+          "protocolId": "PHAROS_RWA",
+          "label": "PharosRwaTreasury",
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": false,
+          "reason": "",
+          "latencyMs": 14184
+        }
+      ],
+      "banner": null,
+      "confirmationCard": "HARBOR DEPOSIT PLAN (non-custodial, unsigned)\n  User:           0x299Ce4113abF88F4997737184aa8A7a3D58AC15C\n  Venue:          ATLANTIC_PRIME @ 0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c\n  Amount:         500000000 underlying units (6 decimals)\n  Horizon:        30 days\n  Legs:           2 (approve -> deposit)\n  Route proof:    0x85ab2b19f5ba1b8c3e6b008f0ca52e2886539ca04edf6b3cd48f3e57202c123e\n  Chain:          Pharos Atlantic Testnet (688689)\n\n  Why this venue won:\n    Selected AtlanticPrimeStaking (Net 30d return: +3.29 USDC, 8.02% effective net APY; post-deposit rate 9.29% after utilization modeling). Rejected PharosRwaTreasury (+3.19 USDC net (7.75% effective) - lower base rate 7.80%; trails winner by 0.11 USDC worse). Rejected HarborLendVault (+3.10 USDC net (7.55% effective) - post-deposit APY compresses from 7.64% to 7.60% (utilization/dilution model); trails winner by 0.19 USDC worse).",
+      "commitment": "0x85ab2b19f5ba1b8c3e6b008f0ca52e2886539ca04edf6b3cd48f3e57202c123e",
+      "unsignedPayload": [
+        {
+          "kind": "approve",
+          "to": "0xd00666d9d7a8FF7D89f496c93bE8737174b49a79",
+          "data": "0x095ea7b3000000000000000000000000e5d292bfa7b74978eca4b5985e9632ffc070934c000000000000000000000000000000000000000000000000000000001dcd6500",
+          "value": "0",
+          "chainId": 688689,
+          "gasEstimate": "60000",
+          "harborRouteCommitment": null,
+          "humanSummary": "Approve 0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c to pull 500000000 underlying units (6 decimals) from your wallet.",
+          "amountRaw": "500000000"
+        },
+        {
+          "kind": "deposit",
+          "to": "0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c",
+          "data": "0x6e553f65000000000000000000000000000000000000000000000000000000001dcd6500000000000000000000000000299ce4113abf88f4997737184aa8a7a3d58ac15c",
+          "value": "0",
+          "chainId": 688689,
+          "gasEstimate": "185000",
+          "harborRouteCommitment": "0x85ab2b19f5ba1b8c3e6b008f0ca52e2886539ca04edf6b3cd48f3e57202c123e",
+          "humanSummary": "Deposit 500000000 underlying units (6 decimals) into AtlanticPrimeStaking via vault.deposit(uint256,address).",
+          "amountRaw": "500000000"
+        }
+      ],
+      "txs": [
+        {
+          "label": "approve 500 tUSDC -> ATLANTIC_PRIME",
+          "hash": "0x22ffbf4b406f73279c62a93db512fdbfd26be272d560d170099bbbe8d8b35ea1",
+          "url": "https://atlantic.pharosscan.xyz/tx/0x22ffbf4b406f73279c62a93db512fdbfd26be272d560d170099bbbe8d8b35ea1",
+          "blockNumber": 32609779,
+          "gasUsed": "46137",
+          "status": "success"
+        },
+        {
+          "label": "deposit 500 tUSDC into ATLANTIC_PRIME",
+          "hash": "0x6680f52087eb5a3b33c9cd03e7fb5670f06c65a6ccafafb5ef48d1d67614d660",
+          "url": "https://atlantic.pharosscan.xyz/tx/0x6680f52087eb5a3b33c9cd03e7fb5670f06c65a6ccafafb5ef48d1d67614d660",
+          "blockNumber": 32609787,
+          "gasUsed": "134600",
+          "status": "success"
+        }
+      ],
+      "anchorTx": {
+        "label": "anchor deposit commitment",
+        "hash": "0x58510f938620ed83a7a893c2dd25606abfd377c86be631f49d583b0c7cab35e0",
+        "url": "https://atlantic.pharosscan.xyz/tx/0x58510f938620ed83a7a893c2dd25606abfd377c86be631f49d583b0c7cab35e0",
+        "blockNumber": 32609795,
+        "gasUsed": "226071",
+        "status": "success"
+      },
+      "selectedProtocol": "ATLANTIC_PRIME"
+    },
+    "faultIsolation": {
+      "pauseTx": {
+        "label": "pause PharosRwaTreasury on-chain (circuit breaker)",
+        "hash": "0x99d52a205d701c6a0d5054a02a4830206b9e419f2cca8f910902aad930ad80d1",
+        "url": "https://atlantic.pharosscan.xyz/tx/0x99d52a205d701c6a0d5054a02a4830206b9e419f2cca8f910902aad930ad80d1",
+        "blockNumber": 32609809,
+        "gasUsed": "117879",
+        "status": "success"
+      },
+      "chaosSpec": {
+        "protocolId": "ATLANTIC_PRIME",
+        "kind": "TIMEOUT",
+        "message": "simulated RPC timeout"
+      },
+      "breakerRounds": {
+        "primeStateAfterRound2": {
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "lastError": null
+        },
+        "rwaStateAfterRound2": {
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "lastError": null
+        }
+      },
+      "healthDuringFailover": [
+        {
+          "protocolId": "HARBOR_LEND",
+          "label": "HarborLendVault",
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": false,
+          "reason": "",
+          "latencyMs": 4218
+        },
+        {
+          "protocolId": "ATLANTIC_PRIME",
+          "label": "AtlanticPrimeStaking",
+          "state": "CIRCUIT_OPEN",
+          "consecutiveFailures": 2,
+          "excludedFromRouting": true,
+          "reason": "AtlanticPrimeStaking: chaos-drill: simulated RPC timeout on AtlanticPrimeStaking",
+          "latencyMs": 1
+        },
+        {
+          "protocolId": "PHAROS_RWA",
+          "label": "PharosRwaTreasury",
+          "state": "CIRCUIT_OPEN_PAUSED",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": true,
+          "reason": "Vault paused on-chain - chaos-drill: fault isolation demo",
+          "latencyMs": 7795
+        }
+      ],
+      "degradedQuery": {
+        "input": "Show my positions and current APY across all vaults",
+        "healthyVenuesServed": [
+          "HarborLendVault"
+        ],
+        "totals": {
+          "underlyingValue": "0"
+        },
+        "banner": "DEGRADED MODE: AtlanticPrimeStaking unavailable (Excluded from routing - reason: CIRCUIT_OPEN - AtlanticPrimeStaking: chaos-drill: simulated RPC timeout on AtlanticPrimeStaking); PharosRwaTreasury unavailable (Excluded from routing - reason: CIRCUIT_OPEN_PAUSED - Vault paused on-chain - chaos-drill: fault isolation demo). Serving queries and routing across the remaining 1 healthy protocol(s).",
+        "excluded": [
+          {
+            "protocolId": "ATLANTIC_PRIME",
+            "label": "AtlanticPrimeStaking",
+            "state": "CIRCUIT_OPEN",
+            "consecutiveFailures": 3,
+            "excludedFromRouting": true,
+            "reason": "AtlanticPrimeStaking: chaos-drill: simulated RPC timeout on AtlanticPrimeStaking",
+            "latencyMs": 2
+          },
+          {
+            "protocolId": "PHAROS_RWA",
+            "label": "PharosRwaTreasury",
+            "state": "CIRCUIT_OPEN_PAUSED",
+            "consecutiveFailures": 0,
+            "excludedFromRouting": true,
+            "reason": "Vault paused on-chain - chaos-drill: fault isolation demo",
+            "latencyMs": 9180
+          }
+        ]
+      },
+      "failoverDeposit": {
+        "input": "Deposit 300 USDC into the best yield vault",
+        "intent": {
+          "kind": "deposit",
+          "raw": "Deposit 300 USDC into the best yield vault",
+          "amount": 300,
+          "horizonDays": 30,
+          "target": "best",
+          "confidence": 0.95,
+          "matched": [
+            "300 USDC",
+            "best"
+          ]
+        },
+        "summary": "Selected HarborLendVault (Net 30d return: +1.86 USDC, 7.53% effective net APY; post-deposit rate 7.61% after utilization modeling). Rejected PharosRwaTreasury (unavailable - venue unavailable - CIRCUIT_OPEN_PAUSED (Vault paused on-chain - chaos-drill: fault isolation demo)). DEGRADED MODE: at least one protocol was excluded from routing; the winner was re-evaluated against healthy venues only..",
+        "comparisonTable": [
+          {
+            "protocolId": "HARBOR_LEND",
+            "label": "HarborLendVault",
+            "vaultAddress": "0xe936c602C6E937B24BB98ac0cC79A508E9A253bA",
+            "headlineApyBps": 764,
+            "postDepositApyBps": 761,
+            "entryFeeBps": 0,
+            "exitFeeBps": 5,
+            "entryFeeCost": "0",
+            "grossYield": "1876438",
+            "gasCostUsdc": 0.02,
+            "netExpectedYield": "1856438",
+            "effectiveNetApyBps": 752.888744,
+            "utilizationBeforeWad": "451219512195121951",
+            "utilizationAfterWad": "451219512195121951",
+            "healthy": true,
+            "selected": true,
+            "rejectionReasons": []
+          },
+          {
+            "protocolId": "PHAROS_RWA",
+            "label": "PharosRwaTreasury",
+            "vaultAddress": "0xE343f0B44C609F089D17D3D7fbd516723dC3Dbca",
+            "headlineApyBps": 780,
+            "postDepositApyBps": 780,
+            "entryFeeBps": 0,
+            "exitFeeBps": 0,
+            "entryFeeCost": "0",
+            "grossYield": "1923287",
+            "gasCostUsdc": 0.02,
+            "netExpectedYield": "1903287",
+            "effectiveNetApyBps": 771.888616,
+            "utilizationBeforeWad": "0",
+            "utilizationAfterWad": "0",
+            "healthy": false,
+            "selected": false,
+            "rejectionReasons": [
+              "venue unavailable - CIRCUIT_OPEN_PAUSED (Vault paused on-chain - chaos-drill: fault isolation demo)"
+            ]
+          }
+        ],
+        "runnerUps": [
+          {
+            "protocolId": "PHAROS_RWA",
+            "label": "PharosRwaTreasury",
+            "netExpectedYield": 1.903287,
+            "reason": "unavailable - venue unavailable - CIRCUIT_OPEN_PAUSED (Vault paused on-chain - chaos-drill: fault isolation demo)"
+          }
+        ],
+        "degradedMode": true,
+        "venueHealth": [
+          {
+            "protocolId": "HARBOR_LEND",
+            "label": "HarborLendVault",
+            "state": "HEALTHY",
+            "consecutiveFailures": 0,
+            "excludedFromRouting": false,
+            "reason": "",
+            "latencyMs": 4284
+          },
+          {
+            "protocolId": "ATLANTIC_PRIME",
+            "label": "AtlanticPrimeStaking",
+            "state": "CIRCUIT_OPEN",
+            "consecutiveFailures": 4,
+            "excludedFromRouting": true,
+            "reason": "AtlanticPrimeStaking: chaos-drill: simulated RPC timeout on AtlanticPrimeStaking",
+            "latencyMs": 2
+          },
+          {
+            "protocolId": "PHAROS_RWA",
+            "label": "PharosRwaTreasury",
+            "state": "CIRCUIT_OPEN_PAUSED",
+            "consecutiveFailures": 0,
+            "excludedFromRouting": true,
+            "reason": "Vault paused on-chain - chaos-drill: fault isolation demo",
+            "latencyMs": 8187
+          }
+        ],
+        "banner": "DEGRADED MODE: AtlanticPrimeStaking unavailable (Excluded from routing - reason: CIRCUIT_OPEN - AtlanticPrimeStaking: chaos-drill: simulated RPC timeout on AtlanticPrimeStaking); PharosRwaTreasury unavailable (Excluded from routing - reason: CIRCUIT_OPEN_PAUSED - Vault paused on-chain - chaos-drill: fault isolation demo). Serving queries and routing across the remaining 1 healthy protocol(s).",
+        "confirmationCard": "HARBOR DEPOSIT PLAN (non-custodial, unsigned)\n  User:           0x299Ce4113abF88F4997737184aa8A7a3D58AC15C\n  Venue:          HARBOR_LEND @ 0xe936c602C6E937B24BB98ac0cC79A508E9A253bA\n  Amount:         300000000 underlying units (6 decimals)\n  Horizon:        30 days\n  Legs:           2 (approve -> deposit)\n  Route proof:    0xed8e4cd0f568f023b79433577518ab6773d4176b8a6f404a8326a866291d4ca0\n  Chain:          Pharos Atlantic Testnet (688689)\n\n  Why this venue won:\n    Selected HarborLendVault (Net 30d return: +1.86 USDC, 7.53% effective net APY; post-deposit rate 7.61% after utilization modeling). Rejected PharosRwaTreasury (unavailable - venue unavailable - CIRCUIT_OPEN_PAUSED (Vault paused on-chain - chaos-drill: fault isolation demo)). DEGRADED MODE: at least one protocol was excluded from routing; the winner was re-evaluated against healthy venues only..",
+        "commitment": "0xed8e4cd0f568f023b79433577518ab6773d4176b8a6f404a8326a866291d4ca0",
+        "txs": [
+          {
+            "label": "approve 300 tUSDC -> HARBOR_LEND (failover)",
+            "hash": "0x9f59ab397a612fab7c26d26674b86623eca6a59ffb51098d9840c9a481da6053",
+            "url": "https://atlantic.pharosscan.xyz/tx/0x9f59ab397a612fab7c26d26674b86623eca6a59ffb51098d9840c9a481da6053",
+            "blockNumber": 32609828,
+            "gasUsed": "46137",
+            "status": "success"
+          },
+          {
+            "label": "failover deposit 300 tUSDC into HARBOR_LEND",
+            "hash": "0x8e29b159422a5d659a2a50b427b4037b47614be59553e38c9c613ade3b4a55b9",
+            "url": "https://atlantic.pharosscan.xyz/tx/0x8e29b159422a5d659a2a50b427b4037b47614be59553e38c9c613ade3b4a55b9",
+            "blockNumber": 32609835,
+            "gasUsed": "117228",
+            "status": "success"
+          }
+        ],
+        "anchorTx": {
+          "label": "anchor deposit commitment",
+          "hash": "0xa9c8745768577380add315f50661834cc4990fff865e63056b950ad5d22228a0",
+          "url": "https://atlantic.pharosscan.xyz/tx/0xa9c8745768577380add315f50661834cc4990fff865e63056b950ad5d22228a0",
+          "blockNumber": 32609842,
+          "gasUsed": "208923",
+          "status": "success"
+        },
+        "selectedProtocol": "HARBOR_LEND"
+      },
+      "rwaCircuitOpenPausedHealth": {
+        "protocolId": "PHAROS_RWA",
+        "label": "PharosRwaTreasury",
+        "state": "CIRCUIT_OPEN_PAUSED",
+        "consecutiveFailures": 0,
+        "excludedFromRouting": true,
+        "reason": "Vault paused on-chain - chaos-drill: fault isolation demo",
+        "latencyMs": 11951
+      },
+      "unpauseTx": {
+        "label": "unpause PharosRwaTreasury (recover)",
+        "hash": "0xb589c00f774f97a373931c795a336b56d43265ac1035a123526e1501933474f4",
+        "url": "https://atlantic.pharosscan.xyz/tx/0xb589c00f774f97a373931c795a336b56d43265ac1035a123526e1501933474f4",
+        "blockNumber": 32609865,
+        "gasUsed": "39208",
+        "status": "success"
+      },
+      "rwaHealthAfterRecovery": {
+        "protocolId": "PHAROS_RWA",
+        "label": "PharosRwaTreasury",
+        "state": "HEALTHY",
+        "consecutiveFailures": 0,
+        "excludedFromRouting": false,
+        "reason": "",
+        "latencyMs": 13556
+      }
+    },
+    "optimalWithdraw": {
+      "input": "Withdraw 200 USDC from my lowest-yielding position",
+      "intent": {
+        "kind": "withdraw",
+        "raw": "Withdraw 200 USDC from my lowest-yielding position",
+        "amount": 200,
+        "horizonDays": 30,
+        "source": "lowest-yield",
+        "confidence": 0.95,
+        "matched": [
+          "200 USDC",
+          "lowest"
+        ]
+      },
+      "summary": "Selected HarborLendVault for the 200.00 USDC exit (lowest net APY 7.60% - opportunity cost 1.25 USDC of 30d yield foregone (7.60% net APY, liquidity/balance-capped)). Alternative AtlanticPrimeStaking at 9.29% net APY would cost 0.28 USDC more in opportunity cost over 30d.",
+      "comparisonTable": [
+        {
+          "protocolId": "HARBOR_LEND",
+          "label": "HarborLendVault",
+          "vaultAddress": "0xe936c602C6E937B24BB98ac0cC79A508E9A253bA",
+          "headlineApyBps": 760,
+          "postDepositApyBps": 760,
+          "entryFeeBps": 0,
+          "exitFeeBps": 0,
+          "entryFeeCost": "0",
+          "grossYield": "0",
+          "gasCostUsdc": 0.02,
+          "netExpectedYield": "-1269315",
+          "effectiveNetApyBps": 760,
+          "utilizationBeforeWad": "0",
+          "utilizationAfterWad": "0",
+          "healthy": true,
+          "selected": true,
+          "rejectionReasons": []
+        },
+        {
+          "protocolId": "ATLANTIC_PRIME",
+          "label": "AtlanticPrimeStaking",
+          "vaultAddress": "0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c",
+          "headlineApyBps": 929,
+          "postDepositApyBps": 929,
+          "entryFeeBps": 0,
+          "exitFeeBps": 0,
+          "entryFeeCost": "0",
+          "grossYield": "0",
+          "gasCostUsdc": 0.02,
+          "netExpectedYield": "-1547123",
+          "effectiveNetApyBps": 929,
+          "utilizationBeforeWad": "0",
+          "utilizationAfterWad": "0",
+          "healthy": true,
+          "selected": false,
+          "rejectionReasons": [
+            "not needed - plan fully served by HarborLendVault"
+          ]
+        }
+      ],
+      "runnerUps": [
+        {
+          "protocolId": "ATLANTIC_PRIME",
+          "label": "AtlanticPrimeStaking",
+          "netExpectedYield": -1.547123,
+          "reason": "not needed - plan fully served by HarborLendVault"
+        }
+      ],
+      "degradedMode": false,
+      "venueHealth": [
+        {
+          "protocolId": "HARBOR_LEND",
+          "label": "HarborLendVault",
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": false,
+          "reason": "",
+          "latencyMs": 4583
+        },
+        {
+          "protocolId": "ATLANTIC_PRIME",
+          "label": "AtlanticPrimeStaking",
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": false,
+          "reason": "",
+          "latencyMs": 13207
+        },
+        {
+          "protocolId": "PHAROS_RWA",
+          "label": "PharosRwaTreasury",
+          "state": "HEALTHY",
+          "consecutiveFailures": 0,
+          "excludedFromRouting": false,
+          "reason": "",
+          "latencyMs": 12694
+        }
+      ],
+      "banner": null,
+      "confirmationCard": "HARBOR WITHDRAW PLAN (non-custodial, unsigned)\n  User:           0x299Ce4113abF88F4997737184aa8A7a3D58AC15C\n  Venue:          HARBOR_LEND @ 0xe936c602C6E937B24BB98ac0cC79A508E9A253bA\n  Amount:         200000000 underlying units (6 decimals)\n  Horizon:        30 days\n  Legs:           1 (withdraw)\n  Route proof:    0xf3a4e47a2f9508cbd8203ea29ea230216d704d4a9b8238a21afa2c5b03a658a8\n  Chain:          Pharos Atlantic Testnet (688689)\n\n  Why this venue won:\n    Selected HarborLendVault for the 200.00 USDC exit (lowest net APY 7.60% - opportunity cost 1.25 USDC of 30d yield foregone (7.60% net APY, liquidity/balance-capped)). Alternative AtlanticPrimeStaking at 9.29% net APY would cost 0.28 USDC more in opportunity cost over 30d.",
+      "commitment": "0xf3a4e47a2f9508cbd8203ea29ea230216d704d4a9b8238a21afa2c5b03a658a8",
+      "unsignedPayload": [
+        {
+          "kind": "withdraw",
+          "to": "0xe936c602C6E937B24BB98ac0cC79A508E9A253bA",
+          "data": "0x00f714ce000000000000000000000000000000000000000000000000000000000bebc200000000000000000000000000299ce4113abf88f4997737184aa8a7a3d58ac15c",
+          "value": "0",
+          "chainId": 688689,
+          "gasEstimate": "165000",
+          "harborRouteCommitment": "0xf3a4e47a2f9508cbd8203ea29ea230216d704d4a9b8238a21afa2c5b03a658a8",
+          "humanSummary": "Withdraw 200000000 underlying units (6 decimals, net of exit fees) from HarborLendVault into your wallet.",
+          "amountRaw": "200000000"
+        }
+      ],
+      "txs": [
+        {
+          "label": "withdraw 200000000 (net) from HARBOR_LEND",
+          "hash": "0x784d12caf073f53dbb51c7068c13c2c951c70cfe49524b270270b22a1c3f6923",
+          "url": "https://atlantic.pharosscan.xyz/tx/0x784d12caf073f53dbb51c7068c13c2c951c70cfe49524b270270b22a1c3f6923",
+          "blockNumber": 32609894,
+          "gasUsed": "84244",
+          "status": "success"
+        }
+      ],
+      "anchorTx": {
+        "label": "anchor withdraw commitment",
+        "hash": "0x8683787ece4997a356745de0a453c0a7908249461526265f912995a758f6e3ec",
+        "url": "https://atlantic.pharosscan.xyz/tx/0x8683787ece4997a356745de0a453c0a7908249461526265f912995a758f6e3ec",
+        "blockNumber": 32609901,
+        "gasUsed": "208983",
+        "status": "success"
+      },
+      "selectedProtocol": "HARBOR_LEND",
+      "splitWithdrawal": {
+        "input": "Withdraw 550 USDC",
+        "legs": 2,
+        "intent": {
+          "kind": "withdraw",
+          "raw": "Withdraw 550 USDC",
+          "amount": 550,
+          "horizonDays": 30,
+          "source": "lowest-yield",
+          "confidence": 0.85,
+          "matched": [
+            "550 USDC"
+          ]
+        },
+        "summary": "Split withdrawal across 2 venues: 98.76 from HarborLendVault (7.62% net APY) + 451.24 from AtlanticPrimeStaking (9.29% net APY) - drains the lowest-yielding venue first to preserve maximum remaining portfolio yield over 30d.",
+        "comparisonTable": [
+          {
+            "protocolId": "HARBOR_LEND",
+            "label": "HarborLendVault",
+            "vaultAddress": "0xe936c602C6E937B24BB98ac0cC79A508E9A253bA",
+            "headlineApyBps": 762,
+            "postDepositApyBps": 762,
+            "entryFeeBps": 0,
+            "exitFeeBps": 0,
+            "entryFeeCost": "0",
+            "grossYield": "0",
+            "gasCostUsdc": 0.02,
+            "netExpectedYield": "-638541",
+            "effectiveNetApyBps": 762,
+            "utilizationBeforeWad": "0",
+            "utilizationAfterWad": "0",
+            "healthy": true,
+            "selected": true,
+            "rejectionReasons": []
+          },
+          {
+            "protocolId": "ATLANTIC_PRIME",
+            "label": "AtlanticPrimeStaking",
+            "vaultAddress": "0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c",
+            "headlineApyBps": 929,
+            "postDepositApyBps": 929,
+            "entryFeeBps": 0,
+            "exitFeeBps": 0,
+            "entryFeeCost": "0",
+            "grossYield": "0",
+            "gasCostUsdc": 0.02,
+            "netExpectedYield": "-3465487",
+            "effectiveNetApyBps": 929,
+            "utilizationBeforeWad": "0",
+            "utilizationAfterWad": "0",
+            "healthy": true,
+            "selected": true,
+            "rejectionReasons": []
+          }
+        ],
+        "runnerUps": [],
+        "degradedMode": false,
+        "venueHealth": [
+          {
+            "protocolId": "HARBOR_LEND",
+            "label": "HarborLendVault",
+            "state": "HEALTHY",
+            "consecutiveFailures": 0,
+            "excludedFromRouting": false,
+            "reason": "",
+            "latencyMs": 4350
+          },
+          {
+            "protocolId": "ATLANTIC_PRIME",
+            "label": "AtlanticPrimeStaking",
+            "state": "HEALTHY",
+            "consecutiveFailures": 0,
+            "excludedFromRouting": false,
+            "reason": "",
+            "latencyMs": 13604
+          },
+          {
+            "protocolId": "PHAROS_RWA",
+            "label": "PharosRwaTreasury",
+            "state": "HEALTHY",
+            "consecutiveFailures": 0,
+            "excludedFromRouting": false,
+            "reason": "",
+            "latencyMs": 12953
+          }
+        ],
+        "banner": null,
+        "confirmationCard": "HARBOR WITHDRAW PLAN (non-custodial, unsigned)\n  User:           0x299Ce4113abF88F4997737184aa8A7a3D58AC15C\n  Venue:          HARBOR_LEND @ 0xe936c602C6E937B24BB98ac0cC79A508E9A253bA\n  Amount:         550000000 underlying units (6 decimals)\n  Horizon:        30 days\n  Legs:           2 (withdraw -> withdraw)\n  Route proof:    0x773b98d6bbe554f2e3b5d88b11a4cd494ab830a437a85c9a3b064c0c67f3adcd\n  Chain:          Pharos Atlantic Testnet (688689)\n\n  Why this venue won:\n    Split withdrawal across 2 venues: 98.76 from HarborLendVault (7.62% net APY) + 451.24 from AtlanticPrimeStaking (9.29% net APY) - drains the lowest-yielding venue first to preserve maximum remaining portfolio yield over 30d.",
+        "commitment": "0x773b98d6bbe554f2e3b5d88b11a4cd494ab830a437a85c9a3b064c0c67f3adcd",
+        "txs": [
+          {
+            "label": "split withdraw 98761008 from withdraw",
+            "hash": "0x3047781c8e1d77dea65d3dd9a1765ac0c319d1b6d75a384b0c4f8d1c6c4e0780",
+            "url": "https://atlantic.pharosscan.xyz/tx/0x3047781c8e1d77dea65d3dd9a1765ac0c319d1b6d75a384b0c4f8d1c6c4e0780",
+            "blockNumber": 32609920,
+            "gasUsed": "84256",
+            "status": "success"
+          },
+          {
+            "label": "split withdraw 451238992 from withdraw",
+            "hash": "0x0c094d5ec5342e73ec7b6b108af004fbaa03f84b39ea85561cb9781d7cf8d542",
+            "url": "https://atlantic.pharosscan.xyz/tx/0x0c094d5ec5342e73ec7b6b108af004fbaa03f84b39ea85561cb9781d7cf8d542",
+            "blockNumber": 32609926,
+            "gasUsed": "84465",
+            "status": "success"
+          }
+        ],
+        "anchorTx": {
+          "label": "anchor withdraw commitment",
+          "hash": "0xe052041005fd34e1c5f354887dac77811feaf30dda18d04cfbf0c09b0fc6f043",
+          "url": "https://atlantic.pharosscan.xyz/tx/0xe052041005fd34e1c5f354887dac77811feaf30dda18d04cfbf0c09b0fc6f043",
+          "blockNumber": 32609934,
+          "gasUsed": "208911",
+          "status": "success"
+        }
+      }
+    },
+    "finalPortfolio": {
+      "positions": [
+        {
+          "protocolId": "HARBOR_LEND",
+          "label": "HarborLendVault",
+          "vaultAddress": "0xe936c602C6E937B24BB98ac0cC79A508E9A253bA",
+          "shares": "8",
+          "underlyingValue": "8",
+          "principalDeposited": "1089535",
+          "accruedYield": "0",
+          "netApyBps": 763,
+          "maxWithdrawable": "7",
+          "healthy": true
+        },
+        {
+          "protocolId": "ATLANTIC_PRIME",
+          "label": "AtlanticPrimeStaking",
+          "vaultAddress": "0xE5D292BFa7B74978ECA4B5985E9632Ffc070934c",
+          "shares": "28930676",
+          "underlyingValue": "29219180",
+          "principalDeposited": "48261008",
+          "accruedYield": "0",
+          "netApyBps": 930,
+          "maxWithdrawable": "29219180",
+          "healthy": true
+        }
+      ],
+      "totals": {
+        "underlyingValue": "29219188",
+        "accruedYield": "0"
+      }
+    }
+  },
+  "links": {
+    "deployTx": "https://atlantic.pharosscan.xyz/tx/0xf2bd93fb2602f1270c1ff5985b77cc01cf329ad1023e0b73760c432325d585b1",
+    "depositTx": "https://atlantic.pharosscan.xyz/tx/0x6680f52087eb5a3b33c9cd03e7fb5670f06c65a6ccafafb5ef48d1d67614d660",
+    "anchorTx": "https://atlantic.pharosscan.xyz/tx/0x58510f938620ed83a7a893c2dd25606abfd377c86be631f49d583b0c7cab35e0",
+    "failoverTx": "https://atlantic.pharosscan.xyz/tx/0x8e29b159422a5d659a2a50b427b4037b47614be59553e38c9c613ade3b4a55b9",
+    "withdrawTx": "https://atlantic.pharosscan.xyz/tx/0x784d12caf073f53dbb51c7068c13c2c951c70cfe49524b270270b22a1c3f6923",
+    "splitWithdrawTx": [
+      "https://atlantic.pharosscan.xyz/tx/0x3047781c8e1d77dea65d3dd9a1765ac0c319d1b6d75a384b0c4f8d1c6c4e0780",
+      "https://atlantic.pharosscan.xyz/tx/0x0c094d5ec5342e73ec7b6b108af004fbaa03f84b39ea85561cb9781d7cf8d542"
+    ]
+  },
+  "txLog": [
+    {
+      "label": "approve 500 tUSDC -> ATLANTIC_PRIME",
+      "hash": "0x22ffbf4b406f73279c62a93db512fdbfd26be272d560d170099bbbe8d8b35ea1",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x22ffbf4b406f73279c62a93db512fdbfd26be272d560d170099bbbe8d8b35ea1",
+      "blockNumber": 32609779,
+      "gasUsed": "46137",
+      "status": "success"
+    },
+    {
+      "label": "deposit 500 tUSDC into ATLANTIC_PRIME",
+      "hash": "0x6680f52087eb5a3b33c9cd03e7fb5670f06c65a6ccafafb5ef48d1d67614d660",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x6680f52087eb5a3b33c9cd03e7fb5670f06c65a6ccafafb5ef48d1d67614d660",
+      "blockNumber": 32609787,
+      "gasUsed": "134600",
+      "status": "success"
+    },
+    {
+      "label": "anchor deposit commitment",
+      "hash": "0x58510f938620ed83a7a893c2dd25606abfd377c86be631f49d583b0c7cab35e0",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x58510f938620ed83a7a893c2dd25606abfd377c86be631f49d583b0c7cab35e0",
+      "blockNumber": 32609795,
+      "gasUsed": "226071",
+      "status": "success"
+    },
+    {
+      "label": "warp accrual +30d on Prime (demo time machine)",
+      "hash": "0x1816d259f3b7e42698d2bf62d2861ec59fd2515dd9435796799b6addde5c8630",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x1816d259f3b7e42698d2bf62d2861ec59fd2515dd9435796799b6addde5c8630",
+      "blockNumber": 32609802,
+      "gasUsed": "36000",
+      "status": "success"
+    },
+    {
+      "label": "pause PharosRwaTreasury on-chain (circuit breaker)",
+      "hash": "0x99d52a205d701c6a0d5054a02a4830206b9e419f2cca8f910902aad930ad80d1",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x99d52a205d701c6a0d5054a02a4830206b9e419f2cca8f910902aad930ad80d1",
+      "blockNumber": 32609809,
+      "gasUsed": "117879",
+      "status": "success"
+    },
+    {
+      "label": "approve 300 tUSDC -> HARBOR_LEND (failover)",
+      "hash": "0x9f59ab397a612fab7c26d26674b86623eca6a59ffb51098d9840c9a481da6053",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x9f59ab397a612fab7c26d26674b86623eca6a59ffb51098d9840c9a481da6053",
+      "blockNumber": 32609828,
+      "gasUsed": "46137",
+      "status": "success"
+    },
+    {
+      "label": "failover deposit 300 tUSDC into HARBOR_LEND",
+      "hash": "0x8e29b159422a5d659a2a50b427b4037b47614be59553e38c9c613ade3b4a55b9",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x8e29b159422a5d659a2a50b427b4037b47614be59553e38c9c613ade3b4a55b9",
+      "blockNumber": 32609835,
+      "gasUsed": "117228",
+      "status": "success"
+    },
+    {
+      "label": "anchor deposit commitment",
+      "hash": "0xa9c8745768577380add315f50661834cc4990fff865e63056b950ad5d22228a0",
+      "url": "https://atlantic.pharosscan.xyz/tx/0xa9c8745768577380add315f50661834cc4990fff865e63056b950ad5d22228a0",
+      "blockNumber": 32609842,
+      "gasUsed": "208923",
+      "status": "success"
+    },
+    {
+      "label": "unpause PharosRwaTreasury (recover)",
+      "hash": "0xb589c00f774f97a373931c795a336b56d43265ac1035a123526e1501933474f4",
+      "url": "https://atlantic.pharosscan.xyz/tx/0xb589c00f774f97a373931c795a336b56d43265ac1035a123526e1501933474f4",
+      "blockNumber": 32609865,
+      "gasUsed": "39208",
+      "status": "success"
+    },
+    {
+      "label": "withdraw 200000000 (net) from HARBOR_LEND",
+      "hash": "0x784d12caf073f53dbb51c7068c13c2c951c70cfe49524b270270b22a1c3f6923",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x784d12caf073f53dbb51c7068c13c2c951c70cfe49524b270270b22a1c3f6923",
+      "blockNumber": 32609894,
+      "gasUsed": "84244",
+      "status": "success"
+    },
+    {
+      "label": "anchor withdraw commitment",
+      "hash": "0x8683787ece4997a356745de0a453c0a7908249461526265f912995a758f6e3ec",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x8683787ece4997a356745de0a453c0a7908249461526265f912995a758f6e3ec",
+      "blockNumber": 32609901,
+      "gasUsed": "208983",
+      "status": "success"
+    },
+    {
+      "label": "split withdraw 98761008 from withdraw",
+      "hash": "0x3047781c8e1d77dea65d3dd9a1765ac0c319d1b6d75a384b0c4f8d1c6c4e0780",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x3047781c8e1d77dea65d3dd9a1765ac0c319d1b6d75a384b0c4f8d1c6c4e0780",
+      "blockNumber": 32609920,
+      "gasUsed": "84256",
+      "status": "success"
+    },
+    {
+      "label": "split withdraw 451238992 from withdraw",
+      "hash": "0x0c094d5ec5342e73ec7b6b108af004fbaa03f84b39ea85561cb9781d7cf8d542",
+      "url": "https://atlantic.pharosscan.xyz/tx/0x0c094d5ec5342e73ec7b6b108af004fbaa03f84b39ea85561cb9781d7cf8d542",
+      "blockNumber": 32609926,
+      "gasUsed": "84465",
+      "status": "success"
+    },
+    {
+      "label": "anchor withdraw commitment",
+      "hash": "0xe052041005fd34e1c5f354887dac77811feaf30dda18d04cfbf0c09b0fc6f043",
+      "url": "https://atlantic.pharosscan.xyz/tx/0xe052041005fd34e1c5f354887dac77811feaf30dda18d04cfbf0c09b0fc6f043",
+      "blockNumber": 32609934,
+      "gasUsed": "208911",
+      "status": "success"
+    }
+  ]
+}
