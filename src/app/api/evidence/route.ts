@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'node:fs';
 import path from 'node:path';
+import { jsonSafe } from '@/lib/json';
 
 /* GET /api/evidence - expose deterministic verification evidence (if the      */
 /* reviewer has run scripts/verify-onchain.ts) plus the deployment record.     */
@@ -19,9 +20,9 @@ export async function GET() {
     }
   };
 
-  return NextResponse.json({
+  return NextResponse.json(jsonSafe({
     present: fs.existsSync(evidencePath),
     evidence: readJson(evidencePath),
     deployment: readJson(deploymentPath),
-  });
+  }));
 }

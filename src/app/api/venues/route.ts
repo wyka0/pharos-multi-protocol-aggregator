@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getHarborServer } from '@/lib/server/aggregator-instance';
+import { jsonSafe } from '@/lib/json';
 
 /* GET /api/venues - live 3-vault rate matrix + venue health snapshot. */
 
@@ -21,13 +22,13 @@ export async function GET() {
   try {
     const rates = await server.aggregator.compareRates(30);
     return NextResponse.json(
-      {
+      jsonSafe({
         configured: true,
         venues: rates.venues,
         health: rates.excluded,
         allHealth: server.aggregator.mesh.healthSnapshot(),
         chain: { id: server.chainId, rpcUrl: server.rpcUrl, explorer: 'https://atlantic.pharosscan.xyz' },
-      },
+      }),
       { status: 200 },
     );
   } catch (e) {

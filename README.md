@@ -52,7 +52,7 @@ fault-isolation state machine, airgap + commitment design, and sequence diagrams
 npm install
 npm run compile          # solc -> src/generated/suite.json
 npm run deploy           # deploy + seed PharosVaultSuite (writes PHAROS_* env)
-npm test                 # 311 vitest tests
+npm test                 # 317 vitest tests
 npm run verify           # 4-scenario live on-chain proof -> evidence/ + receipts
 npm run dev              # http://localhost:3000 (dark Harbor console)
 npm run build            # production build
@@ -70,12 +70,28 @@ npm run audit:secrets    # strict secret audit
 - **Unsigned payload inspector + wallet sign** — per-leg JSON, copy for external wallets, or sign with an
   injected wallet on Atlantic (the *user's* wallet is the only signer).
 
+## HTTP API (all JSON, never 5xx)
+
+| Endpoint | Purpose |
+| --- | --- |
+| `GET /api/venues` | Live 3-vault rate matrix + breaker health snapshot. |
+| `POST /api/agent` | Unified entrypoint: NL/structured queries **and** prepared non-custodial deposit/withdraw actions (unsigned payloads only). |
+| `GET/POST /api/chaos` | UI fault-injection panel (simulated outages per protocol). |
+| `GET /api/evidence` | Serves `evidence/*.json` verification transcripts. |
+
+All responses pass through a BigInt-safe serializer (`src/lib/json.ts`): on-chain
+values like `totalTvl`/`utilizationWad` arrive as **lossless decimal strings**
+(wads exceed `Number.MAX_SAFE_INTEGER`), matching the evidence schema. Verified
+live: `200` on every endpoint, `intent` classification, byte-identical payload
+calldata + route commitment vs the anchored on-chain proof, and graceful
+failover with one venue chaos-killed.
+
 ## Testing
 
-**311 tests / 15 files, all green** — routing math narratives (horizon flips, whale crossovers), withdrawal
+**317 tests / 16 files, all green** — routing math narratives (horizon flips, whale crossovers), withdrawal
 opportunity-cost + split solver, circuit-breaker state machine, allSettled fault isolation (1–3 venues down),
 NL/structured parsing, keccak commitment tamper-evidence, ABI encoding fidelity, source-level airgap scan,
-and solc-artifact consistency. Run with `npx vitest run`.
+solc-artifact consistency, and the BigInt-safe API serializer. Run with `npx vitest run`.
 
 ## Clearly Stated Limits & Architectural Boundaries
 

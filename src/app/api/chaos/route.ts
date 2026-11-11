@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getChaosRegistry } from '@/lib/chaos';
 import { getHarborServer } from '@/lib/server/aggregator-instance';
+import { jsonSafe } from '@/lib/json';
 import { PROTOCOL_IDS, type ProtocolId } from '@/lib/types';
 
 /* ========================================================================== */
@@ -16,10 +17,10 @@ function isProtocolId(v: unknown): v is ProtocolId {
 export async function GET() {
   const chaos = getChaosRegistry();
   const server = getHarborServer();
-  return NextResponse.json({
+  return NextResponse.json(jsonSafe({
     forced: chaos.list(),
     health: server.aggregator ? server.aggregator.mesh.healthSnapshot() : [],
-  });
+  }));
 }
 
 export async function POST(req: Request) {

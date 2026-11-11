@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getHarborServer } from '@/lib/server/aggregator-instance';
+import { jsonSafe } from '@/lib/json';
 import type { Address } from 'viem';
 
 /* ========================================================================== */
@@ -55,7 +56,7 @@ export async function POST(req: Request) {
       user: safeUser,
       horizonDays: typeof horizonDays === 'number' && horizonDays >= 1 && horizonDays <= 3650 ? horizonDays : undefined,
     });
-    return NextResponse.json(response, { status: 200 });
+    return NextResponse.json(jsonSafe(response), { status: 200 });
   } catch (e) {
     // Belt-and-braces: even a bug in the core must degrade gracefully.
     return NextResponse.json(
